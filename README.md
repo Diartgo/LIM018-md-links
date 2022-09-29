@@ -35,7 +35,7 @@ npm i md-links-Dianis -g
 Caso 1 
 El usuario ingresa la ruta y --validate
 
-![validate](Links-encontrados-y-validados.png)
+![validate](Linksencontradosyvalidados.png)
 
 Caso 2 
 El usuario ingresa la ruta y --stats
@@ -45,7 +45,7 @@ El usuario ingresa la ruta y --stats
 Caso 3 
 El usuario ingresa la ruta y --validate  --stats
 
-![statsyvalidate](stats-y-validate.png)
+![statsyvalidate](statsyvalidate.png)
 
 
 # Markdown Links
