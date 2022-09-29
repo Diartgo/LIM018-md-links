@@ -1,48 +1,32 @@
-// module.exports = () => {
-//   // ...
+const func = require('./funciones.js');
+
+// // const paths = 'D:\\Laboratoria\\LIM018-md-links\\readme2.md';
+// const mdLinks = (path, options) => {
+//   return new Promise((resolve, reject) => {
+//     let links = [];
+//     if (!func.validateRoute(path)) {
+//       reject(new Error('La ruta ingresada no existe, ingrese una ruta valida !!'));
+//     }
+//     const absolute = func.isAbsolute(path);
+//     if (!func.fileExt(absolute)) {
+//       reject(new Error('¡No hay archivos con extencion .md!'));
+//     }
+//     const arrayObjetos = func.extractLinks(absolute);
+//     // if (arrayObjetos === null) {
+//     //   reject(new Error('El archivo no contiene'));
+//     // }
+//     if (!options.validate) {
+//       links = arrayObjetos;
+//       resolve(links);
+//     }else {
+//     links = func.validateLinks(arrayObjetos);
+//     resolve(links);
+//     }
+//   });
 // };
-const path = require('node:path');
-const fs = require('fs');
+// mdLinks(  { validate: true })
+//   .then((result) => {
+//     console.log(result);
+//   });
 
-const route = './README.md'
-// const mdLinks = (ruta)=> {
-// }
-let pathAbsolute;
-const routeValidator = (route) => {
-
-  const rutaExiste=fs.existsSync(route);
-  // devuelve un true o false
-   if (rutaExiste==true){
-  
-    //ver si un link es absoluto 
-    const tipoRuta=path.isAbsolute(route);
-
-    //convertir una ruta relativa en absoluta
-    if (tipoRuta == false){
-      pathAbsolute = path.resolve(route);
-   
-    } else pathAbsolute=tipoRuta
-
-    //como sacar la extension que tiene un archivo
-    const pathMd = path.extname(pathAbsolute);
-
-      if (pathMd =='.md'){
-        return pathAbsolute
-        
-      }
-   }
-  
-}
-
-console.log(routeValidator(route));
-
-
-// const leerArchivo = (rutaValidada) => {
-//   fs.readFileSync(rutaValidada, 'utf-8');
-//   console.log(leerArchivo)
-
-// }
-
-
-
-console.log(fs.readFileSync(routeValidator(route), 'utf-8'));
+module.exports = mdLinks;

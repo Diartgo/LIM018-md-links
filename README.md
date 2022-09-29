@@ -1,5 +1,50 @@
-# Markdown Links
 
+![md-links](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\md-links.png)
+
+## Descripción
+
+Markdown es un lenguaje de marcado ligero muy popular entre developers. Es usado en muchísimas plataformas que manejan texto plano (GitHub, foros, blogs, ...), y es muy común encontrar varios archivos en ese formato en cualquier tipo de repositorio (empezando por el tradicional README.md).
+
+Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de la información que se quiere compartir.
+
+Md-links es una biblioteca creada usando node.js que lee y analiza todos los archivos de tipo markdown que pueden estar alojados en carpetas y extrae los links encontrados en dichos archivos. Adicionalmente se puede validar el estado de los links y mostrar algunas estadísticas en relación a ello. Consta de una interfaz (API), así como un ejecutable de línea de comando (CLI).
+
+## Diagrama de FLujo
+
+![Diagrama](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\diagrama.png)
+
+## Instalación
+
+npm i md-links-Dianis -g
+
+## Version
+
+0.1.0
+
+## Comando CLI
+
+[options] : las opciones son las siguientes:
+
+--validate : con esta opción se hace la petición HTTP.
+
+--stats : con esta opción obtendremos las estadísticas de los links encontrados, como el total de links y los links unicos.
+
+--validate --stats: esta opción nos devuelve las estadísticas mas completas como el total de links, links unicos y links rotos.
+
+Caso 1 
+El usuario ingresa la ruta y --validate
+![validate](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\Links encontrados y validados.png)
+
+Caso 2 
+El usuario ingresa la ruta y --stats
+![stats](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\stats.png)
+
+Caso 3 
+El usuario ingresa la ruta y --validate  --stats
+![statsyvalidate](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\stats y validate.png)
+
+
+# Markdown Links
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
