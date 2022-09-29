@@ -37,7 +37,7 @@ const isStats = config.includes('--stats');  //preguntamos si esta incluido el s
                 }})
     
         } else if (isValidate && !isStats){
-            mdLinks(pathsNew, {validate:isValidate})
+           return  mdLinks(pathsNew, {validate:isValidate})
             .then((result) => {
                 result.forEach(link =>
                 console.log(`

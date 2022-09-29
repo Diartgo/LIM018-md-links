@@ -5,7 +5,7 @@ const path = require('node:path');
 const fs = require('fs');
 const axios = require('axios');
 const ERROR_ROUTE_NOT_EXIST = 'La ruta no existe';
-// const route = './readme2.md'
+const route = './readme2.md'
 
 // const mdLinks = (filePath, options) => {
 //   const absolutePath = validateRoute(filePath);
@@ -96,28 +96,35 @@ const extractLinks = (route) => {
 // console.log(extractLinks(isAbsolute(route)));
 
 const validateLink = (path) =>{
+  // const resultObj={}
   const contentLink = extractLinks(path)
   const axiosObject = contentLink.map((obj)=>{
+    console.log(obj)
     return axios.get(obj.href)
     .then((result)=>{
-        const resultObj={
-          ...obj,
+      return { ...obj,
         status: result.status,
         ok: result.statusText
       };
-       return resultObj
+      
+      //  return resultObj
     })
     .catch((error)=>{
-      resultObj.status = error.status,
-      resultObj.ok = 'Fail'
-      return resultObj
+      return { ...obj,
+        status: 'error',
+        ok: 'Fail'
+      };
+      // resultObj.status = error.status,
+      // resultObj.ok = 'Fail'
+      // return resultObj
     });
   })
   return Promise.all(axiosObject)
 }
  
+
 // validateLink(extractLinks(isAbsolute(route))).then((result)=>{
-//   console.log(result)
+ 
 // })
 
 const statsLinks = (path) => {
