@@ -12,7 +12,7 @@ Md-links es una biblioteca creada usando node.js que lee y analiza todos los arc
 
 ## Diagrama de FLujo
 
-![DiagramaMDlinks](imgs\diagrama.png)
+![DiagramaMDlinks](diagrama.png)
 
 ## Instalación
 
@@ -34,14 +34,17 @@ npm i md-links-Dianis -g
 
 Caso 1 
 El usuario ingresa la ruta y --validate
+
 ![validate](imgs\Links encontrados y validados.png)
 
 Caso 2 
 El usuario ingresa la ruta y --stats
+
 ![stats](imgs\stats.png)
 
 Caso 3 
 El usuario ingresa la ruta y --validate  --stats
+
 ![statsyvalidate](imgs\stats y validate.png)
 
 
