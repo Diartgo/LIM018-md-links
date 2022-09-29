@@ -1,5 +1,5 @@
 
-![md-links](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\md-links.png)
+![md-links](imgs\md-links.png)
 
 ## Descripción
 
@@ -11,7 +11,7 @@ Md-links es una biblioteca creada usando node.js que lee y analiza todos los arc
 
 ## Diagrama de FLujo
 
-![Diagrama](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\diagrama.png)
+![Diagrama](imgs\diagrama.png)
 
 ## Instalación
 
@@ -33,15 +33,15 @@ npm i md-links-Dianis -g
 
 Caso 1 
 El usuario ingresa la ruta y --validate
-![validate](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\Links encontrados y validados.png)
+![validate](imgs\Links encontrados y validados.png)
 
 Caso 2 
 El usuario ingresa la ruta y --stats
-![stats](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\stats.png)
+![stats](imgs\stats.png)
 
 Caso 3 
 El usuario ingresa la ruta y --validate  --stats
-![statsyvalidate](D:\Laboratoria\LIM018-md-links\LIM018-md-links\imgs\stats y validate.png)
+![statsyvalidate](imgs\stats y validate.png)
 
 
 # Markdown Links
