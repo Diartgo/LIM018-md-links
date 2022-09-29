@@ -10,11 +10,14 @@ const path = require('node:path');
 const pathsNew = process.argv[2];
 const config = process.argv;
 
-//argv[0] es la ruta del node 
-//argv[1] es la ruta del codigo de secuencia de comandos, md-links
-const isValidate = config.includes('--validate');
+// argv[0] es la ruta del node 
+// argv[1] es la ruta del codigo de secuencia de comandos, md-links
+// argv[2] = ruta del archivo
+// argv[3] = --validate
+// argv[4] = --stats
+const isValidate = config.includes('--validate'); //preguntamos si esta incluido el validate
 // console.log(hasValidate)
-const isStats = config.includes('--stats');
+const isStats = config.includes('--stats');  //preguntamos si esta incluido el stats
 
 
      if (!isValidate && !isStats){

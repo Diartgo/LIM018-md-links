@@ -9,11 +9,18 @@ const {
   mdLinks
 } = require("../funciones.js");
 
+// Mockeando Axios
+jest.mock('axios');
+const axios = require('axios'); 
+
 const truePath = "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md";
 const relativePath = "readme2.md";
 const nuevoPath = "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme3.md"
 const otroPath = ".txt";
-const emptyPath = "D:/Laboratoria/LIM018-md-links/LIM018-md-links/test/readme4.md"
+const emptyPath = "D:/Laboratoria/LIM018-md-links/LIM018-md-links/test/readme4.md";
+
+arrayOfObj = [{"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://curriculum.laboratoria.la/es/topics/javascript/04-arrays", "ok": "OK", "status": 200, "text": "Arreglos"}, {"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/", "ok": "OK", "status": 200, "text": "Array - MDN"}, {"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort", "ok": "OK", "status": 200, "text": "Array.prototype.sort() - MDN"}, {"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach", "ok": "OK", "status": 200, "text": "Array.prototype.forEach() - MDN"}, {"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map", "ok": "OK", "status": 200, "text": "Array.prototype.map() - MDN"}, 
+{"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter", "ok": "OK", "status": 200, "text": "Array.prototype.filter() - MDN"}, {"file": "D:/Laboratoria/LIM018-md-links/LIM018-md-links/readme2.md", "href": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce", "ok": "OK", "status": 200, "text": "Array.prototype.reduce() - MDN"}]
 
 describe("validateRoute", () => {
   it("should return true if the path exists", () => {
@@ -67,16 +74,44 @@ describe("extractLinks, ", () => {
   });
 });
 
-
-
-
-describe('mdLinks', () => {
-
-  it('should...', () => {
-    console.log('FIX ME!');
+describe('validateLink', () => {
+  it('is a function', () => {
+    expect(typeof validateLink).toBe('function');
   });
 
-});
+  it('should be return status:200 y message:ok', () => {
+    const respuesta = {
+      status: 200,
+      statusText: 'OK',
+    }
+    axios.get.mockResolvedValue(respuesta);
+    validateLink(truePath)
+      .then((response) => {
+        expect(response).toEqual(arrayOfObj);
+  });
+})
+  it('should be return status: y message:Fail', () => {
+    const respuesta = {
+      status: '',
+      statusText: 'Fail',
+    }
+    axios.mockResolvedValue(respuesta);
+    validateLink(truePath)
+    .then((response) => {
+      expect(response).toEqual(arrayOfObj)
+    })
+  }) 
+})
+
+
+
+// describe('mdLinks', () => {
+
+//   it('should...', () => {
+//     console.log('FIX ME!');
+//   });
+
+// });
 
 
 

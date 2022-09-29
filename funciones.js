@@ -4,10 +4,8 @@
 const path = require('node:path');
 const fs = require('fs');
 const axios = require('axios');
-const { data } = require('browserslist');
-const { darkmagenta } = require('color-name');
 const ERROR_ROUTE_NOT_EXIST = 'La ruta no existe';
-const route = './readme2.md'
+// const route = './readme2.md'
 
 // const mdLinks = (filePath, options) => {
 //   const absolutePath = validateRoute(filePath);
@@ -59,15 +57,12 @@ const fileExt = (route) => {
 const readFile = (route) => {
   if (path.extname(route)==='.md'){
     // console.log(fs.readFileSync(route, 'utf-8'))
-    return fs.readFileSync(route, 'utf-8');
+    return fs.readFileSync(route, 'utf-8'); //abre un archivo
   } else{
     return 'no es un archivo md'
   }
 }
   
-
-
-
 // /**
 //  * 
 //  * @param {*} route 
@@ -75,12 +70,6 @@ const readFile = (route) => {
 // const readDirectory = (route) => {
 
 // }
-
-// validateRoute(route);
-// isAbsolute(route);
-// fileExt(route);
-// readFile(route);
-
 
 
 const extractLinks = (route) => {
@@ -117,11 +106,12 @@ const validateLink = (path) =>{
         ok: result.statusText
       };
        return resultObj
-      
     })
-    // .catch((error)=>{
-    //   return 'error';
-    // });
+    .catch((error)=>{
+      resultObj.status = error.status,
+      resultObj.ok = 'Fail'
+      return resultObj
+    });
   })
   return Promise.all(axiosObject)
 }
